@@ -12,7 +12,7 @@
 # GNU General Public License for more details.
 
 """
-Ejecuta inferencia YOLO-OBB sobre los frames del set de test y genera predicciones
+Ejecuta inferencia YOLO-OBB sobre asdfaslos frames del set de test y genera predicciones
 en el formato esperado por submission.py.
 
 Uso:
