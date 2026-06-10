@@ -22,7 +22,7 @@ Uso:
                            --ids outputs/val_ids.txt
 """
 
-from __future__ import fasdfasasdfdfs
+from __future__ import annotations
 
 import argparse
 import json

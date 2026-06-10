@@ -154,7 +154,8 @@ MTC Challenge/
 ├── models/                    ← Pesos entrenados (.pt)
 ├── notebooks/                 ← Experimentos adicionales / análisis
 ├── src/                       ← Código fuente modular
-│   ├── dataset.py             ← Dataset class + augmentations
+│   ├── convert_to_yolo_obb.py ← Convierte train.csv a labels YOLO-OBB (4 esquinas)
+│   ├── make_split.py          ← Split train/val por video_id + estructura YOLO
 │   ├── train.py               ← Script de entrenamiento
 │   ├── inference.py           ← Inferencia sobre clips de video
 │   ├── tracking.py            ← Post-procesamiento temporal / tracking
@@ -187,9 +188,9 @@ MTC Challenge/
 
 ### 📋 Pendiente
 
-- [ ] Configurar pipeline de conversión de anotaciones al formato YOLO-OBB (`.txt` por imagen)
-- [ ] Implementar `src/dataset.py` con augmentations OBB-aware
+- [x] Pipeline de conversión al formato YOLO-OBB (`convert_to_yolo_obb.py` + `make_split.py`)
 - [ ] Fine-tuning de YOLOv8-OBB / YOLOv11-OBB desde pesos DOTA preentrenados
+  - Augmentations OBB-aware: por ahora vía built-ins de Ultralytics (ver `configs/train.yaml`)
 - [ ] Implementar tracking intra-clip (ByteTrack o BoT-SORT)
 - [ ] Implementar evaluación con Macro AP-rIoU
 - [ ] Generación del CSV de submission
